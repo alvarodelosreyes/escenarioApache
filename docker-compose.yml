@@ -1,0 +1,11 @@
+version: "3"
+services:
+  apache:
+    build: conf
+    ports:
+      - "8181:80"
+    volumes:
+      - ./conf/sri.asir4all.ss.conf:/etc/apache2/sites-available/000-default.conf
+      - ./conf/passserver:/etc/apache2/passserver
+      - ./conf/password.txt:/etc/apache2/password.txt
+      - ./web:/var/www/html
